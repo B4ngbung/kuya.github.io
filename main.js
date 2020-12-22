@@ -1,5 +1,12 @@
-  let BtnEle = document.querySelector(".Btn");
-    let frameEle = document.querySelector(".frame");
-    BtnEle.addEventListener("click", () => {
-        frameEle.className = "fullScreen";
-    });
+var elem = document.getElementById("myvideo");
+
+/* Function to open fullscreen mode */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
